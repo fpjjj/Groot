@@ -1,13 +1,17 @@
+# 指定了CMake的最低版本为3.2
 cmake_minimum_required(VERSION 3.2)
 
+# 更新策略设置，避免在当前CMake版本级别加载ament_cmake包时出现错误
 # Update the policy setting to avoid an error when loading the ament_cmake package
 # at the current cmake version level
 if(POLICY CMP0057)
     cmake_policy(SET CMP0057 NEW)
 endif()
 
+# 设置项目名称为groot
 project(groot)
 
+# 查找Qt5的组件Core、Widgets、Gui、OpenGL、Xml和Svg
 find_package(Qt5 COMPONENTS  Core Widgets Gui OpenGL Xml Svg)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}  "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
